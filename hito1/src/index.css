@@ -1,0 +1,27 @@
+
+.header {
+  background: linear-gradient(rgb(0,0,0,0.4)), url('./assets/Header.jpg');
+  opacity: 0.9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  height: 45vh;
+  color: #fff;
+}
+
+.setCards {
+  margin: 30px 0;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  
+}
+
+.hideA {
+  display:none;
+}
+
+.hideB {
+  display:none;
+}
+
