@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     const total = 25000;
-    const token = false;
+    const token = true;
 
   return (
     <>
@@ -14,16 +14,16 @@ const Navbar = () => {
                         <li class="nav-item">
                         <a class="nav-link px-3" aria-current="page" href="#">🍕Home</a>
                         </li>
-                        <li class="nav-item hideA" className={token==false? "hideA":null}>
+                        <li class="nav-item" className={token? "hideA":"hideB"}>
                         <a class="nav-link" href="#">🔓Profile</a>
                         </li>
-                        <li class="nav-item hideA" className={token==false? "hideA":null}>
+                        <li class="nav-item" className={token? "hideA":"hideB"}>
                         <a class="nav-link" href="#">🔒Logout</a>
                         </li>
-                        <li class="nav-item hideB" className={token==true? "hideB":null}>
+                        <li class="nav-item" className={token? "hideA":"hideB"}>
                         <a class="nav-link" href="#">🔐Login</a>
                         </li>
-                        <li class="nav-item hideB" className={token==true? "hideB":null}>
+                        <li class="nav-item" className={token? "hideA":"hideB"}>
                         <a class="nav-link" href="#">🔐Register</a>
                         </li>
                     </ul>
