@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     const total = 25000;
-    const token = true;
+    const token = false;
 
   return (
     <>
@@ -14,18 +14,18 @@ const Navbar = () => {
                         <li class="nav-item">
                         <a class="nav-link px-3" aria-current="page" href="#">🍕Home</a>
                         </li>
-                        <li class="nav-item" className={token? "hideA":"hideB"}>
-                        <a class="nav-link" href="#">🔓Profile</a>
-                        </li>
-                        <li class="nav-item" className={token? "hideA":"hideB"}>
-                        <a class="nav-link" href="#">🔒Logout</a>
-                        </li>
-                        <li class="nav-item" className={token? "hideA":"hideB"}>
-                        <a class="nav-link" href="#">🔐Login</a>
-                        </li>
-                        <li class="nav-item" className={token? "hideA":"hideB"}>
-                        <a class="nav-link" href="#">🔐Register</a>
-                        </li>
+                        {!token ? (
+                                        <>
+                                        <li class="nav-item"><a class="nav-link" href="#">🔐Login</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">🔐Register</a></li>
+                                        </>
+                                  ) : (
+                                        <>
+                                        <li class="nav-item"><a class="nav-link" href="#">🔓Profile</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">🔒Logout</a></li>
+                                        </>
+                                    )}
+                       
                     </ul>
                 </div>
                 <button type="button" class="btn btn-outline-primary">🛒Total: ${total.toLocaleString()} </button>
