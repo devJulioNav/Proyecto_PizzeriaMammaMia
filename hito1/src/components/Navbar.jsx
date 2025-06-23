@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Navbar = () => {
     const total = 25000;
