@@ -3,8 +3,6 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 //import { pizzas } from '../assets/js/pizzas';
-//import pizzas from '../assets/js/pizzas';
-//{props.ingredients.join(", ")}
 
 const CardPizza = ({name,ingredients,price,img}) => {
   return (
