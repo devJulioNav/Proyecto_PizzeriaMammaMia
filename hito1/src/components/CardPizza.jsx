@@ -27,7 +27,6 @@ const CardPizza = ({name,ingredients,price,img}) => {
         </Card.Body>
         </Card>
     </>
-
   );
 }
 

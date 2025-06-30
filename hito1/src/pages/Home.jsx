@@ -1,6 +1,5 @@
-
-import Header from './Header';
-import CardPizza from './CardPizza';
+import Header from '../components/Header';
+import CardPizza from '../components/CardPizza';
 //import {pizzas} from '../assets/js/pizzas';
 import { useState, useEffect } from 'react';
 
@@ -29,7 +28,7 @@ const Home = () => {
   return (
     <>
       <Header/>
-      <main className="container d-flex flex-wrap my-4 gap-5 px-4" >
+      <main className="container d-flex justify-content-center flex-wrap my-5 gap-5 px-4" >
             {pizzas.map(pizza => <CardPizza name={pizza.name} price={pizza.price} ingredients={pizza.ingredients} img={pizza.img} />)}
       </main>
     </>

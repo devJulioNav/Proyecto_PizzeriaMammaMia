@@ -25,7 +25,7 @@ const Pizza = () => {
 
   return (
 
-    <section className="row p-5 m-5 align-items-center" style={{ minHeight: '60vh',width:'185vh',backgroundColor: 'white', margin: 'auto' }}>
+    <section className="row p-5 m-5 align-items-center" style={{ minHeight: '60vh',width:'185vh',backgroundColor: 'white',margin: 'auto',borderRadius: '8px'}}>
       <div
         className="col-12 col-md-4 pizza__bg-img"
         style={{
@@ -38,7 +38,7 @@ const Pizza = () => {
           borderRadius: '10px'
         }}
       ></div>
-      <div className="col-12 col-md-8 d-flex flex-column justify-content-center p-5">
+      <div className="col-12 col-md-8 d-flex flex-column justify-content-center p-3">
         <h1 className="mb-3">Pizza {pizza.name}</h1>
         <p className="mt-2">{pizza.desc}</p>
         <h5 className="mt-4">Ingredientes:</h5>

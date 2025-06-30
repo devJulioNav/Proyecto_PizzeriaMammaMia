@@ -32,7 +32,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
-        <div className="form-container container-fluid bg-secondary py-5">
+        <div className="form-container container-fluid bg-secondary my-5 py-5">
             <h2>Register</h2>
             <form onSubmit={handleSubmit} className="px-5">
                 <label className="my-2 fs-5">Correo electrónico:</label><br/>

@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const total = 25000;
@@ -6,29 +6,37 @@ const Navbar = () => {
 
   return (
     <>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 px-4">
-            <div class="container-fluid ">
-                <h4 class="text-bg-dark">¡Pizzería Mamma Mia!</h4>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link px-3" aria-current="page" href="#">🍕Home</a>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3 px-4">
+            <div className="container-fluid ">
+                <h4 className="text-bg-dark mx-3">¡Pizzería Mamma Mia!</h4>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                        <Link className="nav-link px-2" aria-current="page" to="/">🏠Home</Link>
                         </li>
                         {!token ? (
                                         <>
-                                        <li class="nav-item"><a class="nav-link" href="#">🔐Login</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">🔐Register</a></li>
+                                        <li className="nav-item"><Link className="nav-link px-2" to="/login">🔐Login</Link></li>
+                                        <li className="nav-item"><Link className="nav-link px-2" to="/register">🔐Register</Link></li>
                                         </>
                                   ) : (
                                         <>
-                                        <li class="nav-item"><a class="nav-link" href="#">🔓Profile</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">🔒Logout</a></li>
+                                        <li className="nav-item"><Link className="nav-link px-2" to="/profile">🔓Profile</Link></li>
+                                        <li className="nav-item"><Link className="nav-link px-2" to="/logout">🔒Logout</Link></li>
                                         </>
                                     )}
-                       
+                        <li className="nav-item">
+                        <Link className="nav-link px-2" aria-current="page" to="/cart">🛒Cart</Link>
+                        </li>
+                        <li className="nav-item">
+                        <Link className="nav-link px-2" aria-current="page" to="/pizza">🍕Pizza</Link>
+                        </li>
+                       <li className="nav-item">
+                        <Link className="nav-link px-2" aria-current="page" to="/profile">🙍‍♂️Profile</Link>
+                        </li>
                     </ul>
                 </div>
-                <button type="button" class="btn btn-outline-primary">🛒Total: ${total.toLocaleString()} </button>
+                <button type="button" className="btn btn-outline-primary mx-3"><Link className="nav-link px-3" aria-current="page" to="/cart">🛒Total: ${total.toLocaleString()}</Link></button>
             </div>
         </nav>
     </>
