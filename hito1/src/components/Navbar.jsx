@@ -36,7 +36,9 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <button type="button" className="btn btn-outline-primary mx-3"><Link className="nav-link px-3" aria-current="page" to="/cart">🛒Total: ${total.toLocaleString()}</Link></button>
+                <button type="button" className="btn btn-outline-primary mx-3">
+                    <Link className="nav-link px-3" aria-current="page" to="/cart">🛒Total: ${total.toLocaleString()}</Link>
+                </button>
             </div>
         </nav>
     </>

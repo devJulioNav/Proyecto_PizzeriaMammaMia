@@ -10,9 +10,10 @@ const NotFound = () => {
         <Link to="/" className="btn btn-link">Volver al Home</Link>
         <div className="container-image h-5">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" 
+          src="https://img.freepik.com/vector-gratis/ups-error-404-ilustracion-concepto-robot-roto_114360-5529.jpg?semt=ais_items_boosted&w=740" 
           alt="Página no encontrada"
           className="not-found-image"
+          style={{height:'60vh'}}
         />
         </div>
       </div>
