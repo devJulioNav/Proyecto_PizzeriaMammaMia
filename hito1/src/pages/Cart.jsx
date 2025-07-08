@@ -1,40 +1,13 @@
+
 import React from 'react';
-import { useState } from 'react';
-import { pizzaCart } from '../assets/js/pizzas';
+import { useContext } from 'react';
+//import { pizzaCart } from '../assets/js/pizzas';
+import { CartContext } from '../context/CartContext';
 
 const Cart = () => {
+
+  const { aumentar,disminuir,result,carro } = useContext(CartContext)
   
-  const [carro, setCarro] = useState(pizzaCart);
-  const editPizza = [...carro];
-
-  const aumentar = (pizza) => {
-    const index = editPizza.findIndex((el) => el.id === pizza.id);
-
-    carro[index].price = (pizza.price / pizza.count) * (pizza.count + 1);
-    carro[index].count = pizza.count + 1;
-    setCarro([...carro]);
-  };
-
-  const disminuir = (pizza) => {
-    const index = editPizza.findIndex((el) => el.id === pizza.id);
-    if (editPizza[index].count - 1 == 0) {
-      carro.splice(index, 1);
-      setCarro([...carro]);
-      return;
-    } else {
-      carro[index].price = (pizza.price / pizza.count) * (pizza.count - 1);
-      carro[index].count = pizza.count - 1;
-      setCarro([...carro]);
-      return;
-    }
-  };
-
-  const result = carro.reduce(
-    (total, currentValue) => (total = total + currentValue.price),
-    0
-  );
-      
-
   return (
  <div className="my-5 card container ">
       <div className="d-flex justify-content-center">

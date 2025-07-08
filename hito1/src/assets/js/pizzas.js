@@ -72,4 +72,25 @@ export const pizzaCart = [
     count: 1,
     img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3",
   },
+  {
+    id: "P004",
+    name: "cuatro estaciones",
+    price: 9590,
+    count: 1,
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-2000595_640_c.jpg?alt=media&token=61325b6e-a1e0-441e-b3b5-7335ba13e8be",
+  },
+  {
+    id: "P005",
+    name: "bacon",
+    price: 6450,
+    count: 1,
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-salame.jpg?alt=media&token=ab3d4bf8-01f2-4810-982b-bd7fb6b517b2",
+  },
+  {
+    id: "P006",
+    name: "pollo picante",
+    price: 8500,
+    count: 1,
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-2000595_640_c.jpg?alt=media&token=61325b6e-a1e0-441e-b3b5-7335ba13e8be",
+  }
 ];

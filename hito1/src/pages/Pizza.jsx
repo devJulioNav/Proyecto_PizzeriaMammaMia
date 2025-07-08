@@ -47,7 +47,7 @@ const Pizza = () => {
           <h2 className="m-0">
             Precio: ${pizza.price?.toLocaleString('es-CL')}
           </h2>
-          <button className="btn btn-dark">Agregar al carrito 🛒</button>
+          <button className="btn btn-dark" >Agregar al carrito 🛒</button>
         </div>
       </div>
     </section>

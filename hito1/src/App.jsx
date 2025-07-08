@@ -11,22 +11,21 @@ import Profile from './components/Profile';
 import NotFound from './components/NotFound';
 import { Route, Routes} from 'react-router-dom';
 
+
 function App() {
 
   return (
     <>
       <Navbar/>
-      
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/pizza" element={<Pizza/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="*" element={<NotFound/>} />
-      </Routes>
-
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/pizza" element={<Pizza/>} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="*" element={<NotFound/>} />
+        </Routes>
       <Footer/>
     </>
   )
