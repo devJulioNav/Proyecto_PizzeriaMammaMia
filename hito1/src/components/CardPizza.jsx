@@ -3,11 +3,12 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import { CartContext } from '../context/CartContext';
+
 //import { pizzas } from '../assets/js/pizzas';
 
-const CardPizza = ({name,ingredients,price,img}) => {
-
-  const {agregarAlCarro} = useContext(CartContext)
+const CardPizza = ({id,name,ingredients,price,img}) => {
+  
+  const { agregarAlCarro } = useContext(CartContext)
   return (
     <>
         <Card style={{ width: '20rem' }} className="setCards" >
@@ -26,7 +27,7 @@ const CardPizza = ({name,ingredients,price,img}) => {
         </ListGroup>
         <Card.Body className="d-flex justify-content-between p-4">
             <Button className="px-4"  variant="outline-dark">Ver más 👀</Button>
-            <Button className="px-4" variant="dark" onClick={agregarAlCarro}>Añadir 🛒</Button>
+            <Button className="px-4" variant="dark" onClick={() => agregarAlCarro(id)}>Añadir 🛒</Button>
         </Card.Body>
         </Card>
     </>
