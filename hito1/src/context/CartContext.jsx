@@ -1,5 +1,6 @@
 import { createContext, useState, useContext } from "react";
 import { ApiContext } from "./ApiContext";
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext();
 
@@ -81,8 +82,18 @@ const CartProvider = ({ children }) => {
 
   const result = carro.reduce((total, item) => total + item.price, 0);
 
+  const mostrarAlerta = () => {
+  Swal.fire({
+      title: '¡Acción realizada!',
+      text: 'Has agregado la pizza al carrito satisfactoriamente.',
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#3085d6',
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ pizzas, carro, agregarAlCarro, aumentar, disminuir, result }}>
+    <CartContext.Provider value={{ pizzas, carro, agregarAlCarro, aumentar, disminuir, result, mostrarAlerta }}>
       {children}
     </CartContext.Provider>
   );

@@ -9,7 +9,7 @@ import Cart from './pages/Cart';
 import Pizza from './pages/Pizza';
 import Profile from './components/Profile';
 import NotFound from './components/NotFound';
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
