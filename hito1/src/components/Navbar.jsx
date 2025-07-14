@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
 
 const Navbar = () => {
     //const total = 25000;
     const { result } = useContext(CartContext);
-    const token = false;
+    //const token = false;
+    const { token, logout} = useContext(UserContext);
 
   return (
     <>
@@ -19,24 +21,15 @@ const Navbar = () => {
                         </li>
                         {!token ? (
                                         <>
-                                        <li className="nav-item"><Link className="nav-link px-2" to="/login">🔐Login</Link></li>
                                         <li className="nav-item"><Link className="nav-link px-2" to="/register">🔐Register</Link></li>
+                                        <li className="nav-item"><Link className="nav-link px-2" to="/login">🔐Login</Link></li>
                                         </>
                                   ) : (
                                         <>
                                         <li className="nav-item"><Link className="nav-link px-2" to="/profile">🔓Profile</Link></li>
-                                        <li className="nav-item"><Link className="nav-link px-2" to="/logout">🔒Logout</Link></li>
+                                        <li className="nav-item"><Link className="nav-link px-2" to="/" onClick={() => logout()}>🔒Logout</Link></li>
                                         </>
                                     )}
-                        <li className="nav-item">
-                        <Link className="nav-link px-2" aria-current="page" to="/cart">🛒Cart</Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link className="nav-link px-2" aria-current="page" to="/pizza">🍕Pizza</Link>
-                        </li>
-                       <li className="nav-item">
-                        <Link className="nav-link px-2" aria-current="page" to="/profile">🙍‍♂️Profile</Link>
-                        </li>
                     </ul>
                 </div>
                 <button type="button" className="btn btn-outline-primary mx-3">

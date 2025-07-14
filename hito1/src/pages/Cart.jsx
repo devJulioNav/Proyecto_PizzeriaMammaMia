@@ -3,10 +3,12 @@ import React from 'react';
 import { useContext } from 'react';
 //import { pizzaCart } from '../assets/js/pizzas';
 import { CartContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
 
 const Cart = () => {
 
   const { aumentar,disminuir,result,carro } = useContext(CartContext)
+  const { token } = useContext(UserContext);
   
   return (
  <div className="my-5 card container ">
@@ -45,7 +47,7 @@ const Cart = () => {
           <h3 className="text-start text-primary fw-bold">
             Total a pagar : $ {Intl.NumberFormat().format(result)}
           </h3>
-          <button className="my-3 px-5 col-4 btn btn-primary fw-bold">Pagar Productos</button>
+          <button className="my-3 px-5 col-4 btn btn-primary fw-bold" disabled={!token}>Pagar Productos</button>
         </div>
       </div>
     </div>

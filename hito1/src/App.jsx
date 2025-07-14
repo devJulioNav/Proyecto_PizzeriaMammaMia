@@ -10,7 +10,7 @@ import Pizza from './pages/Pizza';
 import Profile from './components/Profile';
 import NotFound from './components/NotFound';
 import { Route, Routes } from 'react-router-dom';
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
@@ -22,8 +22,12 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/cart" element={<Cart/>} />
-          <Route path="/pizza" element={<Pizza/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/pizza/:id" element={<Pizza/>} />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <Profile/>
+            </ProtectedRoute>
+            } />
           <Route path="*" element={<NotFound/>} />
         </Routes>
       <Footer/>

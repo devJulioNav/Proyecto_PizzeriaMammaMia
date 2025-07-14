@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
 
 const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { token } = useContext(UserContext);
+
+if (token) return <Navigate to="/" />;
 
 const handleSubmit = (e) => {
 

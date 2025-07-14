@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 const Pizza = () => {
+  const { agregarAlCarro, mostrarAlerta } = useContext(CartContext)
+  const { id } = useParams();
   const [pizza, setPizza] = useState(null);
-  const urlPizzas = "http://localhost:5000/api/pizzas/p001";
+  const urlPizzas = `http://localhost:5000/api/pizzas/${id}`;
 
   useEffect(() => {
     const getApiPizzas = async () => {
       try {
         const res = await fetch(urlPizzas);
+        if (!res.ok) throw new Error('Pizza no encontrada');
         const data = await res.json();
         setPizza(data);
       } catch (err) {
@@ -17,7 +22,7 @@ const Pizza = () => {
     };
 
     getApiPizzas();
-  }, []);
+  }, [id]);
 
   if (!pizza) {
     return <div className="text-center py-5">Cargando pizza...</div>;
@@ -47,7 +52,11 @@ const Pizza = () => {
           <h2 className="m-0">
             Precio: ${pizza.price?.toLocaleString('es-CL')}
           </h2>
-          <button className="btn btn-dark" >Agregar al carrito 🛒</button>
+          <button className="btn btn-dark" onClick=
+              {() => {
+                agregarAlCarro(id); 
+                mostrarAlerta();
+              }}>Agregar al carrito 🛒</button>
         </div>
       </div>
     </section>
